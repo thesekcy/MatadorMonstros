@@ -12,8 +12,7 @@ new Vue({
         menssagemFinal: 'O jogo acabou',
         desativarBotao: false,
         desistirText: 'Desistir',
-        cura: 3,
-        especial: 3,
+        especial: 1,
     },
     methods: {
         funcAtacar() {
@@ -32,12 +31,13 @@ new Vue({
                 this.widthMonstro -= this.danoPlayer;
                 //console.log("player: " + this.danoPlayer + " monstro: " + this.danoMonstro)
                 this.verificaJogo();
+                this.especial -= 1;
             } else {
-                alert("Você não tem mais ataques especiais.");
+                alert("Seu especial estará disponivel no proximo turno.");
             }
         },
         funcCurar() {
-            if (this.cura > 0) {
+            if (this.especial > 0) {
                 this.danoMonstro = Math.floor(Math.random() * 11) + 7;
                 this.curaPlayer = Math.floor(Math.random() * 12) + 9;
                 this.widthPlayer += this.curaPlayer;
@@ -45,11 +45,15 @@ new Vue({
                 //this.widthMonstro -= this.danoPlayer;
                 //console.log("player: +" + this.curaPlayer + " monstro: " + this.danoMonstro)
                 this.verificaJogo();
+                this.especial -= 1;
             } else {
-                alert("Você não pode mais curar.");
+                alert("Sua cura estará disponivel no proximo turno.");
             }
         },
         verificaJogo() {
+            if(this.especial == 0){
+                this.especial =+ 1;
+            }
             if (this.widthMonstro <= 0 && this.widthPlayer <= 0) {
                 this.widthMonstro = 0;
                 this.widthPlayer = 0;
