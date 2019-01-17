@@ -9,7 +9,7 @@ new Vue({
         danoMonstro: 0,
         curaPlayer: 0,
         finalGame: false,
-        menssagemFinal: '',
+        menssagemFinal: 'O jogo acabou',
     },
     methods: {
         funcAtacar() {
