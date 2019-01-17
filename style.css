@@ -1,0 +1,44 @@
+
+.players{
+    margin: 4% 5% 0% 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #d9d9d9;
+}
+
+.barra-progresso-j{
+    height: 30px;
+    width: 500px;
+    border: 1px solid #000;
+  }
+  
+  .progresso-j{
+    background-color: green;
+    height: 100%;
+  }
+
+  .barra-progresso-m{
+    height: 30px;
+    width: 500px;
+    border: 1px solid #000;
+  }
+  
+  .progresso-m{
+    background-color: green;
+    height: 100%;
+  }
+  
+  .botoes{
+    margin: 1% 5% 0% 5%;
+    padding-top: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 1%;
+    background-color: #d9d9d9;
+    justify-content: space-around;
+    text-align: center;
+  }
