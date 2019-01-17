@@ -37,22 +37,29 @@ new Vue({
             }
         },
         funcCurar() {
-            if (this.especial > 0) {
-                this.danoMonstro = Math.floor(Math.random() * 11) + 7;
-                this.curaPlayer = Math.floor(Math.random() * 12) + 9;
-                this.widthPlayer += this.curaPlayer;
-                this.widthPlayer -= this.danoMonstro;
-                //this.widthMonstro -= this.danoPlayer;
-                //console.log("player: +" + this.curaPlayer + " monstro: " + this.danoMonstro)
-                this.verificaJogo();
-                this.especial -= 1;
+            if (this.widthPlayer >= 100) {
+                alert("Sua vida já está cheia");
             } else {
-                alert("Sua cura estará disponivel no proximo turno.");
+                if (this.especial > 0) {
+                    this.danoMonstro = Math.floor(Math.random() * 11) + 7;
+                    this.curaPlayer = Math.floor(Math.random() * 12) + 9;
+                    this.widthPlayer += this.curaPlayer;
+                    this.widthPlayer -= this.danoMonstro;
+                    if(this.widthPlayer >= 100){
+                        this.widthPlayer = 100;
+                    }
+                    //this.widthMonstro -= this.danoPlayer;
+                    //console.log("player: +" + this.curaPlayer + " monstro: " + this.danoMonstro)
+                    this.verificaJogo();
+                    this.especial -= 1;
+                } else {
+                    alert("Sua cura estará disponivel no proximo turno.");
+                }
             }
         },
         verificaJogo() {
-            if(this.especial == 0){
-                this.especial =+ 1;
+            if (this.especial == 0) {
+                this.especial = + 1;
             }
             if (this.widthMonstro <= 0 && this.widthPlayer <= 0) {
                 this.widthMonstro = 0;
