@@ -36,13 +36,15 @@
         <div class="botoes">
             <button v-show="btnComecar" @click="btnsGame = !btnsGame, btnComecar = !btnComecar">Começar o jogo</button>
             <div v-show="btnsGame" class="btns-jogo">
-                <button @click="funcAtacar">Ataque</button>
-                <button @click="ataqueEspecial">Ataque Especial</button>
-                <button @click="funcCurar">Curar</button>
-                <button @click="btnsGame = !btnsGame, btnComecar = !btnComecar">Desistir</button>
+                <button :disabled="desativarBotao" @click="funcAtacar">Ataque</button>
+                <button :disabled="desativarBotao" @click="ataqueEspecial">Ataque Especial</button>
+                <button :disabled="desativarBotao" @click="funcCurar">Curar</button>
+                <button @click="desistirGame()">{{ desistirText }}</button>
             </div>
         </div>
 
+        <div class="log">
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
