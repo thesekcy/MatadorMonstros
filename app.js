@@ -119,6 +119,8 @@ new Vue({
             this.menssagemFinal = 'O jogo acabou';
             this.desativarBotao = false;
             this.desistirText = 'Desistir';
+            this.colorVidaM = 'green';
+            this.colorVidaP = 'green';
         },
     },
 });
