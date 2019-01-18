@@ -53,7 +53,7 @@ new Vue({
                     this.curaPlayer = Math.floor(Math.random() * 12) + 9;
                     this.widthPlayer += this.curaPlayer;
                     this.widthPlayer -= this.danoMonstro;
-                    if(this.widthPlayer >= 100){
+                    if (this.widthPlayer >= 100) {
                         this.widthPlayer = 100;
                     }
                     //this.widthMonstro -= this.danoPlayer;
@@ -75,11 +75,11 @@ new Vue({
                 logM: "O Monstro deu " + this.danoMonstro + " de dano no Jogador."
             })
 
-            if(this.widthMonstro < 21){
+            if (this.widthMonstro < 21) {
                 this.colorVidaM = "red";
             }
-            if(this.widthPlayer < 21){
-                this.colorVidaP = "red"; 
+            if (this.widthPlayer < 21) {
+                this.colorVidaP = "red";
             }
             if (this.especial == 0) {
                 this.especial = + 1;
@@ -119,8 +119,15 @@ new Vue({
             this.menssagemFinal = 'O jogo acabou';
             this.desativarBotao = false;
             this.desistirText = 'Desistir';
+            this.especial = 1;
             this.colorVidaM = 'green';
             this.colorVidaP = 'green';
+            this.logPlayer = [{
+                logP: '',
+            }];
+            this.logMonstro = [{
+                logM: '',
+            }];
         },
     },
 });
