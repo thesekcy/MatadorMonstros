@@ -16,14 +16,14 @@
             <div class="jogador">
                 <h1>Jogador</h1>
                 <div class="barra-progresso-j">
-                    <div class="progresso-j" :style="{width: widthPlayer + '%'}"></div>
+                    <div class="progresso-j" :style="{width: widthPlayer + '%', backgroundColor: colorVidaP}"></div>
                 </div>
                 <h3 v-bind="widthPlayer">{{ widthPlayer }}%</h3>
             </div>
             <div class="monstro">
                 <h1>monstro</h1>
                 <div class="barra-progresso-m">
-                    <div class="progresso-m" :style="{width: widthMonstro + '%'}"></div>
+                    <div class="progresso-m" :style="{width: widthMonstro + '%', backgroundColor: colorVidaM}"></div>
                 </div>
                 <h3>{{ widthMonstro }}%</h3>
             </div>
@@ -44,6 +44,13 @@
         </div>
 
         <div class="log">
+            <ul>
+                <li v-for="lgmonstro in logMonstro"><span v-for="(valorM, chaveM, indexM) in lgmonstro"> {{valorM}}</span></li>
+            </ul>
+
+            <ul>
+                <li v-for="lgjogador in logPlayer"><span v-for="(valorJ, chaveJ, indexJ) in lgjogador"> {{valorJ}}</span></li>
+            </ul>
         </div>
     </div>
     <script src="app.js"></script>

@@ -13,6 +13,14 @@ new Vue({
         desativarBotao: false,
         desistirText: 'Desistir',
         especial: 1,
+        colorVidaM: 'green',
+        colorVidaP: 'green',
+        logPlayer: [{
+            logP: '',
+        }],
+        logMonstro: [{
+            logM: '',
+        }],
     },
     methods: {
         funcAtacar() {
@@ -58,6 +66,21 @@ new Vue({
             }
         },
         verificaJogo() {
+
+            this.logPlayer.push({
+                logP: "O Jogador deu " + this.danoPlayer + " de dano no monstro."
+            })
+
+            this.logMonstro.push({
+                logM: "O Monstro deu " + this.danoMonstro + " de dano no Jogador."
+            })
+
+            if(this.widthMonstro < 21){
+                this.colorVidaM = "red";
+            }
+            if(this.widthPlayer < 21){
+                this.colorVidaP = "red"; 
+            }
             if (this.especial == 0) {
                 this.especial = + 1;
             }

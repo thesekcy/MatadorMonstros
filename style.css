@@ -1,4 +1,6 @@
-
+li{
+  list-style: none;
+}
 .players{
     margin: 4% 5% 0% 5%;
     padding-left: 15%;
