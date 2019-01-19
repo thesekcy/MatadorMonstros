@@ -16,11 +16,12 @@ new Vue({
         colorVidaM: 'green',
         colorVidaP: 'green',
         logPlayer: [{
-            logP: '',
+            logP: 'Jogador se pocisiona na frente do monstro.',
         }],
         logMonstro: [{
-            logM: '',
+            logM: 'Monstro ameaça matar o jogador.',
         }],
+        round: 1,
     },
     methods: {
         funcAtacar() {
@@ -29,6 +30,7 @@ new Vue({
             this.widthPlayer -= this.danoMonstro;
             this.widthMonstro -= this.danoPlayer;
             //console.log("player: " + this.danoPlayer + " monstro: " + this.danoMonstro)
+            this.verificaDano();
             this.verificaJogo();
         },
         ataqueEspecial() {
@@ -58,6 +60,7 @@ new Vue({
                     }
                     //this.widthMonstro -= this.danoPlayer;
                     //console.log("player: +" + this.curaPlayer + " monstro: " + this.danoMonstro)
+                    this.verificaCura();
                     this.verificaJogo();
                     this.especial -= 1;
                 } else {
@@ -65,15 +68,36 @@ new Vue({
                 }
             }
         },
-        verificaJogo() {
-
+        verificaCura() {
             this.logPlayer.push({
-                logP: "O Jogador deu " + this.danoPlayer + " de dano no monstro."
+                logP: this.round + ") O Jogador curou um total de " + this.curaPlayer + " de vida."
             })
 
             this.logMonstro.push({
-                logM: "O Monstro deu " + this.danoMonstro + " de dano no Jogador."
+                logM: this.round + ") O Monstro deu " + this.danoMonstro + " de dano no Jogador."
             })
+        },
+        verificaEspecial() {
+            this.logPlayer.push({
+                logP: this.round + ") O Jogador deu ataque especial e tirou " + this.danoPlayer + " de dano no monstro."
+            })
+
+            this.logMonstro.push({
+                logM: this.round + ") O Monstro deu " + this.danoMonstro + " de dano no Jogador."
+            })
+        },
+        verificaDano(){
+            this.logPlayer.push({
+                logP: this.round + ") O Jogador deu " + this.danoPlayer + " de dano no monstro."
+            })
+
+            this.logMonstro.push({
+                logM: this.round + ") O Monstro deu " + this.danoMonstro + " de dano no Jogador."
+            })
+        },
+
+        verificaJogo() {
+            this.round++;
 
             if (this.widthMonstro < 21) {
                 this.colorVidaM = "red";
@@ -128,6 +152,7 @@ new Vue({
             this.logMonstro = [{
                 logM: '',
             }];
+            this.round = 1;
         },
     },
 });

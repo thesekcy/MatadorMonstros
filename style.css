@@ -44,3 +44,29 @@ li{
     justify-content: space-around;
     text-align: center;
   }
+
+  .display{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .clLogJ{
+    background-color: #a7f7be;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  
+  .clLogM{
+    background-color: #d1a2d1;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }

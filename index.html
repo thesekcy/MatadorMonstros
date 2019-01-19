@@ -43,14 +43,20 @@
             </div>
         </div>
 
-        <div class="log">
-            <ul>
-                <li v-for="lgmonstro in logMonstro"><span v-for="(valorM, chaveM, indexM) in lgmonstro"> {{valorM}}</span></li>
-            </ul>
+        <div class="botoes log">
+            <div class="display">
+                <ul>
+                    <li class="clLogJ" v-for="lgjogador in logPlayer"><span v-for="(valorJ, chaveJ, indexJ) in lgjogador">
+                            {{valorJ}}</span></li>
+                </ul>
 
-            <ul>
-                <li v-for="lgjogador in logPlayer"><span v-for="(valorJ, chaveJ, indexJ) in lgjogador"> {{valorJ}}</span></li>
-            </ul>
+                <ul>
+                    <li class="clLogM" v-for="lgmonstro in logMonstro"><span v-for="(valorM, chaveM, indexM) in lgmonstro">
+                            {{valorM}}</span></li>
+                </ul>
+
+
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
